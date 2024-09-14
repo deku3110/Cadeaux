@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutons Magiques - 21</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://image.tmdb.org/t/p/original/1MDRBafO42jgwWkKKJkd5LDlTAT.jpg');
+            background-size: cover;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            color: #000653;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            background-color: #091b09;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .container {
+            position: relative;
+            width: 600px;
+            height: 600px;
+        }
+        /* Grand bouton en premier plan */
+        .main-button {
+            z-index: 2;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 30px 60px;
+            font-size: 24px;
+            background-color: #2b0a08;
+        }
+        .main-button:hover {
+            background-color: #e53935;
+        }
+        /* Bouton pour revenir à la liste des boutons */
+        .back-button {
+            display: none;
+            z-index: 2;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 15px 30px;
+            font-size: 16px;
+            background-color: #043760;
+        }
+        .back-button:hover {
+            background-color: #1976D2;
+        }
+        /* Masquer les boutons au début */
+        .buttons-container {
+            display: none;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .buttons-container button {
+            width: calc(50% - 20px); /* Ajuste pour les marges */
+        }
+        /* Style du message */
+        .response {
+            margin-top: 20px;
+            font-size: 24px; /* Augmente la taille du texte */
+            color: #000000;
+            background-color: rgba(255, 255, 255, 0.8); /* Arrière-plan semi-transparent */
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #000000; /* Contour pour plus de visibilité */
+            max-width: 90%; /* Ajuste la largeur maximale */
+            display: inline-block;
+            word-wrap: break-word; /* Assure que le texte ne déborde pas */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Boutons Magiques ✨</h1>
+    <div class="container">
+        <!-- Grand bouton pour afficher les autres boutons -->
+        <button class="main-button" onclick="showButtons()">En ésperant que ça te plaise</button>
+
+        <!-- Bouton pour revenir à la liste des boutons -->
+        <button class="back-button" onclick="showButtonsList()">Retour à la liste</button>
+
+        <!-- Conteneur pour les autres boutons -->
+        <div class="buttons-container" id="buttons-container">
+            <!-- Chiffre 2 -->
+            <button class="btn-2-1" onclick="showMessage('c tout a fait normal ! t humaine t pas un robot, tu es une incroyable personne alors garde la tête haute tu vas y arriver !')">Un coup de mou ?</button>
+            <button class="btn-2-2" onclick="showMessage('c normal davoir peur mais ne la laisse pas te frainer va au dela de cette peur et je suis sur que tu pourras faire bien plus que ce que tu ne crois')">Peur de quelque chose ?</button>
+            <button class="btn-2-3" onclick="showMessage('Félicitations ! Je savais que tu réussirais, continue comme ça !')">Réussite/Réalisation d'un projet ?</button>
+            <button class="btn-2-4" onclick="showMessage('Un échec ? Ne t\'inquiète pas, les échecs sont des tremplins vers le succès. Releve toi tu as tout a y gagner, tu peux le faire !')">Un échec</button>
+            <button class="btn-2-5" onclick="showMessage('Rappelle-toi, tu es incroyable telle que tu es, ne laisse rien te rabaisser ! Et si tu as besoin den parler hésite surtout pas !')">Complexe qui ressort ?</button>
+            <button class="btn-2-6" onclick="showMessage('Tu viens de tomber ? Haha, au moins tu ne tomberas pas plus bas ! Mais j\'espère que ça va. 😄')">Tu viens de tomber</button>
+            <button class="btn-2-7" onclick="showMessage('Stressée ? Arrête de stresser, tu vas y arriver ! Si tu ne peux pas, je croirai en toi à ta place. Et je tassure que tout se passera bien')">Stressée ?</button>
+            <button class="btn-2-8" onclick="showMessage('Mot drôle : Pourquoi les plongeurs plongent-ils toujours en arrière et jamais en avant ? Parce que sinon ils tombent dans le bateau ! (deso humour de merde ;-;)😂')">Mot drôle</button>
+            <button class="btn-2-9" onclick="showMessage('Écoute Courage en moi 🎵')">Envie d'une musique ?</button>
+            <button class="btn-2-10" onclick="showMessage('Écoute Reflection 🎵')">Une autre musique ?</button>
+            <button class="btn-2-11" onclick="showMessage('Continue de rire et de sourire, tu es tellement incroyable quand tu es joyeuse ! <3 (T\'es incroyable dans tous les cas !)')">Petit mot surprise</button>
+
+            <!-- Chiffre 1 -->
+            <button class="btn-1-1" onclick="showMessage('Gage 1 : Fais 5 pompes !')">Gage 1</button>
+            <button class="btn-1-2" onclick="showMessage('Gage 2 : Fais un compliment à quelqu\'un !')">Gage 2</button>
+            <button class="btn-1-3" onclick="showMessage('Gage 3 : Envoie un message amusant à une amie !')">Gage 3</button>
+            <button class="btn-1-4" onclick="showMessage('Gage 4 : Envoie un message gentil a la personne que tu veux')">Gage 4</button>
+            <button class="btn-1-5" onclick="showMessage('Gage 5 : Raconte une blague à quelqu\'un au hasard !')">Gage 5</button>
+            <button class="btn-1-6" onclick="showMessage('Gage 6 : 30s de gainage :) (deso javais plus didée)')">Gage 6</button>
+            <button class="btn-1-7" onclick="showMessage('Tu te sens seule ? Rappelle-toi que je suis toujours là, n\'hésite jamais a venir me voir !')">Si tu te sens seule</button>
+            <button class="btn-1-8" onclick="showMessage('Tu es quelqun avec une energie incroyable, je t trouvé sympa dès le début et heureusement que on c rencontré t vrm une bonne personne')">Première impression</button>
+            <button class="btn-1-9" onclick="showMessage('Tu veux une poussée d\'égo ? Allez, tu es tout simplement fantastique, personne ne peut te battre! 💪')">Poussée d'égo</button>
+            <button class="btn-1-10" onclick="showMessage('Jai cree ceci afin quil te sois utile un bon bout de temps, je ne voulais pas toffrir qlch qui etait a usage unique, alors voici en tout 21 bouton avec des mot personnalisé (21 pour 21ans), que dire de plus ? tu mérite tout le bohneur possible, ne tarrete jamais de rire et de sourir ta bonne humeur et contagieuse ! haha, et aussi essaye dapprendre a avoir plus confiance en toi ces barriere mentale que tu te met toute seule je suis sur que sans sa tu serais capable de encore mieux ! AH ET AVANT QUE JOUBLIE tu na pas rater ta vie et tu nest pas une raté sa arrive a tout le monde de ne pas savoir quoi faire ect alors ne tinquiete pas pour tout sa ! Allez passe une bonne journée !! <3')">Pavé</button>
+        </div>
+    </div>
+
+    <div id="message" class="response"></div>
+
+    <script>
+        function showButtons() {
+            document.querySelector('.main-button').style.display = 'none'; // Masquer le grand bouton
+            document.getElementById('buttons-container').style.display = 'flex'; // Afficher les autres boutons
+            document.querySelector('.back-button').style.display = 'none'; // Masquer le bouton retour
+            document.getElementById('message').textContent = ''; // Masquer le texte
+        }
+
+        function showButtonsList() {
+            document.getElementById('buttons-container').style.display = 'none'; // Masquer les boutons
+            document.querySelector('.main-button').style.display = 'block'; // Afficher le grand bouton
+            document.querySelector('.back-button').style.display = 'none'; // Masquer le bouton retour
+            document.getElementById('message').textContent = ''; // Masquer le texte
+        }
+
+        function showMessage(message) {
+            document.getElementById('message').textContent = message;
+            document.getElementById('buttons-container').style.display = 'none'; // Masquer les boutons
+            document.querySelector('.back-button').style.display = 'block'; // Afficher le bouton retour
+        }
+    </script>
+
+</body>
+</html>
